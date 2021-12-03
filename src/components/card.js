@@ -13,11 +13,9 @@ const Card = (article) => {
   nImg.src = article.authorPhoto 
   let nSpan = document.createElement('span')
   nSpan.textContent = article.authorName
-  nDiv.append(hDiv)
-  nDiv.append(aDiv)
-  aDiv.append(iDiv)
+  nDiv.append(hDiv, aDiv)
+  aDiv.append(iDiv, nSpan)
   iDiv.append(nImg)
-  aDiv.append(nSpan)
   return nDiv
   // TASK 5
   // ---------------------
@@ -38,6 +36,7 @@ const Card = (article) => {
   // </div>
   //
 }
+
 
 const cardAppender = (selector) => {
   axios.get('http://localhost:5000/api/articles').then(resp =>{
