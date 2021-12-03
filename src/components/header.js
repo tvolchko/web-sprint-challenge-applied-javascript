@@ -1,4 +1,16 @@
 const Header = (title, date, temp) => {
+  let nDiv = document.createElement('div')
+  nDiv.classList.add('header')
+  let nSpan = document.createElement('span')
+  nSpan.classList.add('date')
+  nSpan.textContent = date
+  let tit = document.createElement('h1')
+  tit.textContent = title
+  let nSpan1 = document.createElement('span')
+  nSpan1.classList.add('temp')
+  nSpan1.textContent = temp
+  nDiv.append(nSpan, tit, nSpan1)
+  return nDiv
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -14,6 +26,7 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
+  document.querySelector(selector).append(Header('This is a title', '1/1/1111', '69'))
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
