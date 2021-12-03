@@ -16,6 +16,9 @@ const Card = (article) => {
   nDiv.append(hDiv, aDiv)
   aDiv.append(iDiv, nSpan)
   iDiv.append(nImg)
+  nDiv.addEventListener('click', () =>{
+      console.log(hDiv.textContent)
+  })
   return nDiv
   // TASK 5
   // ---------------------
